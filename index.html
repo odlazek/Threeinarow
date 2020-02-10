@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+
+	<title>Three in a row</title>
+</head>
+<body onresize="resizeCustom()">
+
+<div class="page-wrap">
+
+	<div class="container">
+		<div class="row d-flex justify-content-between align-items-end	 mb-4">
+			<!-- player 1 -->
+			<div class="col-md-12 col-lg-4 mb-2">
+				<div class="card playerCard">
+					<div class="card-body">
+						<h3 class="card-title"><p id="player1Name"></p></h3>
+						<p class="card-text" id="player1Score"></p>
+					</div>
+				</div>
+			</div>
+					<div class="col-md-12 col-lg-2 d-flex flex-column align-items-center">
+						<button type="button" class="btn btn-secondary mb-2" onclick="removeMarks()">New game</button>
+						<button type="button" class="btn btn-secondary mb-2" data-toggle="modal" data-target="#myModal">Change player</button>
+					 </div>
+					
+			<!-- player 2 -->
+			<div class="col-md-12 col-lg-4">
+				<div class="card playerCard">
+					<div class="card-body">
+						<h3 class="card-title"><p id="player2Name"></p></h3>
+						<p class="card-text" id="player2Score"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="col-sm field" id="one"></div>
+			<div class="col-sm field" id="two"></div>
+			<div class="col-sm field" id="three"></div>
+			<div class="w-100"></div>
+			<div class="col-sm field" id="four"></div>
+			<div class="col-sm field" id="five"></div>
+			<div class="col-sm field" id="six"></div>
+			<div class="w-100"></div>
+			<div class="col-sm field" id="seven"></div>
+			<div class="col-sm field" id="eight"></div>
+			<div class="col-sm field" id="nine"></div>
+	</div>
+	</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title" id="myModalLabel">Change player</h4>
+      </div>
+      <div class="modal-body d-flex flex-column">
+       	<input type="text" id="player1" name="player1" value="player 1" onfocus="this.value=''" class="mb-2">
+       	<input type="tet" id="player2" name="Player2" value="player 2" onfocus="this.value=''" class="mb-2">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="savePlayerData">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- my script -->
+	<script type="text/javascript" src="script.js"></script>
+	<!-- bootstrap javascript -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
