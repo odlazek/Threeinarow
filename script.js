@@ -87,25 +87,29 @@ getScore();
 
 
 function addMark(){
-	if(playerOne.mark === true){
-		let mark = document.createElement("div");
-		let markText = document.createTextNode("");
-		mark.className = "markOne";
-		mark.appendChild(markText);
-		this.appendChild(mark);
-		playerOne.mark = false;
-		playerTwo.mark = true;
-	} else {
-		let mark = document.createElement("div");
-		let markText = document.createTextNode("");
-		mark.className = "markTwo";
-		mark.appendChild(markText);
-		this.appendChild(mark);
-		playerOne.mark = true;
-		playerTwo.mark = false;
+	console.log(this.firstElementChild);
+	if(this.firstElementChild === null){
+		console.log("notr");
+		if(playerOne.mark === true){
+			let mark = document.createElement("div");
+			let markText = document.createTextNode("");
+			mark.className = "markOne";
+			mark.appendChild(markText);
+			this.appendChild(mark);
+			playerOne.mark = false;
+			playerTwo.mark = true;
+		} else {
+			let mark = document.createElement("div");
+			let markText = document.createTextNode("");
+			mark.className = "markTwo";
+			mark.appendChild(markText);
+			this.appendChild(mark);
+			playerOne.mark = true;
+			playerTwo.mark = false;
+		}
+		checkWin(playerOne.markID);
+		checkWin(playerTwo.markID);
 	}
-	checkWin(playerOne.markID);
-	checkWin(playerTwo.markID);
 
 }
 
