@@ -66,6 +66,7 @@ let playerName2 = document.getElementById("player2");
 	playerTwo.name = playerName2.value;
 	document.getElementById("player1Name").innerHTML= playerOne.name;
 	document.getElementById("player2Name").innerHTML= playerTwo.name;
+	playerTurn();
 }
 
 getUsername();
@@ -81,15 +82,23 @@ function getScore(){
 }
 getScore();
 
+function playerTurn(){
+	if(playerOne.mark === true){
+		document.getElementById("turn").innerHTML = "It's " + playerOne.name + "'s turn";
+	} else {
+		document.getElementById("turn").innerHTML = "It's " + playerTwo.name + "'s turn";
+	}
+
+}
+playerTurn();
+
 /* ----------------- game logic -------------------- */
 
 
 
 
 function addMark(){
-	console.log(this.firstElementChild);
 	if(this.firstElementChild === null){
-		console.log("notr");
 		if(playerOne.mark === true){
 			let mark = document.createElement("div");
 			let markText = document.createTextNode("");
@@ -98,6 +107,7 @@ function addMark(){
 			this.appendChild(mark);
 			playerOne.mark = false;
 			playerTwo.mark = true;
+		
 		} else {
 			let mark = document.createElement("div");
 			let markText = document.createTextNode("");
@@ -107,6 +117,7 @@ function addMark(){
 			playerOne.mark = true;
 			playerTwo.mark = false;
 		}
+		playerTurn();
 		checkWin(playerOne.markID);
 		checkWin(playerTwo.markID);
 	}
@@ -138,41 +149,49 @@ function checkWin(player){
 
 			if(fieldContentId[0] === player && fieldContentId[1] === player && fieldContentId[2] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 
 			if(fieldContentId[3] === player && fieldContentId[4] === player && fieldContentId[5] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 
 			if(fieldContentId[6] === player && fieldContentId[7] === player && fieldContentId[8] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 
 			if(fieldContentId[0] === player && fieldContentId[3] === player && fieldContentId[6] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 
 			if(fieldContentId[1] === player && fieldContentId[4] === player && fieldContentId[7] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 
 			if(fieldContentId[2] === player && fieldContentId[5] === player && fieldContentId[8] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 
 			if(fieldContentId[0] === player && fieldContentId[4] === player && fieldContentId[8] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 
 			if(fieldContentId[2] === player && fieldContentId[4] === player && fieldContentId[6] === player){
 				playerWon(player);
+				removeMarks();
 			break;
 			}
 		}
