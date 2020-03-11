@@ -149,49 +149,49 @@ function checkWin(player){
 
 			if(fieldContentId[0] === player && fieldContentId[1] === player && fieldContentId[2] === player){
 				playerWon(player);
-				removeMarks();
+				
 			break;
 			}
 
 			if(fieldContentId[3] === player && fieldContentId[4] === player && fieldContentId[5] === player){
 				playerWon(player);
-				removeMarks();
+				
 			break;
 			}
 
 			if(fieldContentId[6] === player && fieldContentId[7] === player && fieldContentId[8] === player){
 				playerWon(player);
-				removeMarks();
+			
 			break;
 			}
 
 			if(fieldContentId[0] === player && fieldContentId[3] === player && fieldContentId[6] === player){
 				playerWon(player);
-				removeMarks();
+				
 			break;
 			}
 
 			if(fieldContentId[1] === player && fieldContentId[4] === player && fieldContentId[7] === player){
 				playerWon(player);
-				removeMarks();
+				
 			break;
 			}
 
 			if(fieldContentId[2] === player && fieldContentId[5] === player && fieldContentId[8] === player){
 				playerWon(player);
-				removeMarks();
+				
 			break;
 			}
 
 			if(fieldContentId[0] === player && fieldContentId[4] === player && fieldContentId[8] === player){
 				playerWon(player);
-				removeMarks();
+				
 			break;
 			}
 
 			if(fieldContentId[2] === player && fieldContentId[4] === player && fieldContentId[6] === player){
 				playerWon(player);
-				removeMarks();
+				
 			break;
 			}
 		}
